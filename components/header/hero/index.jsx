@@ -1,6 +1,7 @@
 import Image from "next/image";
 import MeIlustration from "../../me-ilustration";
 import HeroGreetings from "./greetings";
+import { useEffect } from "react";
 
 export default function Hero() {
   return (
@@ -10,7 +11,10 @@ export default function Hero() {
           <HeroGreetings />
         </div>
         {/* bg */}
-        <div className="absolute inset-0 -z-10 opacity-30">
+        <div
+          className="absolute inset-0 -z-10 opacity-30 dark:brightness-[40%] transition-all duration-700 dark:opacity-100"
+          id="hero"
+        >
           <Image
             alt="hero-image"
             layout="fill"

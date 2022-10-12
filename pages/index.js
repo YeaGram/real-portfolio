@@ -1,11 +1,17 @@
 import Content from "../components/content";
 import Header from "../components/header";
-
+import Head from "next/head";
 export default function Home() {
   return (
-    <div>
-      <Header />
-      <Content />
-    </div>
+    <>
+      <Head>
+        <title>Yeagram</title>
+        <link rel="icon" href="/logo.webp" />
+      </Head>
+      <div>
+        <Header />
+        <Content />
+      </div>
+    </>
   );
 }
