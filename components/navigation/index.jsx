@@ -3,16 +3,23 @@ import HamburgerMenu from "./hamburger";
 import { useState } from "react";
 import { MdHome, MdTask, MdFace, MdContactSupport } from "react-icons/md";
 import Brand from "../brand";
-import ThemeHandler from "../theme";
+import { ThemeHandler, useContainerScrool } from "../myFunction";
+import ThemeButton from "../theme";
 
 export default function NavigationBar() {
+  const contaienrHeight = useContainerScrool();
+
   const [menuActive, setMenuActive] = useState(false);
-  function handleMenu() {
+  const handleMenu = () => {
     setMenuActive(menuActive ? false : true);
-  }
+  };
 
   return (
-    <nav className="py-5 px-10 shadow-xl fixed w-full dark:bg-gray-900 dark:text-white bg-white sm:bg-transparent sm:backdrop-blur-sm z-10 backdrop-brightness-110">
+    <nav
+      className={`${
+        menuActive ? "pt-4 " : "py-4"
+      } px-10 shadow-xl fixed w-full dark:bg-gray-900 dark:text-white bg-white sm:bg-transparent sm:backdrop-blur-sm z-10 backdrop-brightness-110`}
+    >
       <div className="flex items-center">
         <div className="flex items-center gap-4 container mx-auto justify-between sm:justify-start">
           <Brand />
@@ -29,15 +36,16 @@ export default function NavigationBar() {
         </div>
         <span className="text-2xl cursor-pointer hidden sm:inline">
           {/* <MdLightMode /> */}
-          <ThemeHandler />
+          {/* <ThemeHandler /> */}
+          <ThemeButton />
         </span>
       </div>
       <ul
-        className={`items-center gap-2 w-full ${
-          !menuActive ? "hidden" : "flex"
+        className={`items-center gap-2 w-full transition-all ${
+          !menuActive ? "hidden " : "flex"
         } flex-col border-y-2 border-slate-200 dark:border-slate-700 py-2 mt-8 sm:hidden`}
       >
-        <div className="mobile">
+        <div className="mobile ">
           <NavigationBarItems>
             <MdHome />
             Home
@@ -56,8 +64,15 @@ export default function NavigationBar() {
           </NavigationBarItems>
         </div>
       </ul>
-      <span className={menuActive ? "inline sm:hidden" : "hidden"}>
-        <ThemeHandler HamburgerMenu={menuActive} />
+      <span
+        className={
+          menuActive
+            ? "flex py-5 justify-center items-center sm:hidden"
+            : "hidden"
+        }
+      >
+        {/* <ThemeHandler HamburgerMenu={menuActive} /> */}
+        <ThemeButton />
       </span>
     </nav>
   );

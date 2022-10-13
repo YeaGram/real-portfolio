@@ -23,10 +23,10 @@ export default function HeroGreetings() {
   //   }
   return (
     <div className=" px-10 sm:p-0 greetings dark:text-white">
-      <h2 className="font-semibold xl:text-5xl text-4xl md:text-6xl lg:text-5xl text-green-900/70 dark:text-white/70 transition-all leading-8">
+      <h2 className="font-semibold font-Merriweather tracking-tight xl:text-5xl text-4xl md:text-6xl lg:text-5xl text-green-900/70 dark:text-white/70 transition-all leading-8">
         Hello im...
       </h2>
-      <h1 className="font-bold flex md:text-7xl lg:text-6xl xl:text-7xl text-6xl text-black dark:text-white animate-myBounce_scale">
+      <h1 className="font-[900] font-Patua_One  flex md:text-7xl lg:text-6xl xl:text-7xl  text-black dark:text-white animate-myBounce_scale">
         {/* <span className="inline-flex">{y}</span> */}
         <GreetingsAnimation animation="animate-myBounce_light dark:animate-myBounce_dark dark:animation-delay-100  animation-delay-100">
           Y

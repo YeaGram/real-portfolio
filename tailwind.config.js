@@ -6,7 +6,19 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    screens: {
+      xs: "475px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
     extend: {
+      fontFamily: {
+        Merriweather: "Merriweather Sans",
+        Patua_One: "Patua One",
+      },
       keyframes: {
         myBounce_in_light: {
           "0%, 100%": { transform: "translateY(-10%)", color: "white" },
@@ -28,5 +40,8 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animation-delay")],
+  plugins: [
+    require("tailwindcss-animation-delay"),
+    require("tailwind-scrollbar"),
+  ],
 };

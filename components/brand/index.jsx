@@ -13,7 +13,7 @@ export default function Brand() {
               className="group-hover:rotate-[360deg] duration-500 transition-all"
             />
           </div>
-          <h3 className="ml-2 text-2xl">
+          <h3 className="ml-2 text-2xl font-Merriweather tracking-tighter">
             Yea<span className="font-bold">Gram</span>
           </h3>
         </div>
