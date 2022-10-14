@@ -1,5 +1,26 @@
 import { useState, useEffect } from "react";
 
+// !MousePosition Configuration
+export function useMousePos(elm) {
+  const [posX, setPosX] = useState("");
+  const [posY, setPosY] = useState("");
+
+  useEffect(() => {
+    const elementTarget = document.getElementById(elm);
+
+    elementTarget.addEventListener("mousemove", (e) => {
+      let x = elementTarget.getBoundingClientRect();
+      setPosX(Math.round(e.clientX - x.left));
+      setPosY(Math.round(e.clientY - x.top));
+    });
+
+    return removeEventListener("mousemove", () => {});
+  }, []);
+
+  return { posX: posX, posY: posY };
+}
+
+// !Theme Configuration
 export function useTheme() {
   // const isMobile = HamburgerMenu === undefined ? "Desktop" : "Mobile";
 
@@ -15,19 +36,29 @@ export function useTheme() {
   return [inactiveTheme, setTheme];
 }
 
+// !ScrollConfiguration
 export function useContainerScrool() {
   const [clientWindowHeight, setClientWindowHeight] = useState("");
+  const [containerHeight, setContainerHeight] = useState("");
+
   useEffect(() => {
     const container = document.getElementById("screenContainer");
+
+    const windowHeight = window.innerHeight;
+    setClientWindowHeight(windowHeight);
 
     container.addEventListener("scroll", () => {
       handleContainerHeight(container.scrollTop);
     });
+
+    return removeEventListener("scroll", () => {
+      handleContainerHeight();
+    });
   }, []);
 
   const handleContainerHeight = (height) => {
-    setClientWindowHeight(height);
+    setContainerHeight(height);
   };
 
-  return clientWindowHeight;
+  return [containerHeight, clientWindowHeight];
 }

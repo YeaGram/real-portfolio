@@ -1,15 +1,13 @@
-import { useState, useEffect } from "react";
+import styles from "./me.module.css";
 
 export default function MeIlustration() {
-  // const bodyColor = "#eee";
-  // const cloths = "fff";
-
   return (
     <svg
       dataname="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 793.57972 828"
       xmlnsXlink="http://www.w3.org/1999/xlink"
+      className={styles.svgParent}
     >
       <title>Ilustration Yeagram (a MAN lol)</title>
       <ellipse

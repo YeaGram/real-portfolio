@@ -3,11 +3,13 @@ import HamburgerMenu from "./hamburger";
 import { useState } from "react";
 import { MdHome, MdTask, MdFace, MdContactSupport } from "react-icons/md";
 import Brand from "../brand";
-import { ThemeHandler, useContainerScrool } from "../myFunction";
+import { useContainerScrool } from "../myFunction";
 import ThemeButton from "../theme";
 
 export default function NavigationBar() {
-  const contaienrHeight = useContainerScrool();
+  const scrollPos = useContainerScrool();
+  const containerScrollPos = scrollPos[0];
+  const windowHeight = scrollPos[1] / 2;
 
   const [menuActive, setMenuActive] = useState(false);
   const handleMenu = () => {
@@ -16,9 +18,11 @@ export default function NavigationBar() {
 
   return (
     <nav
-      className={`${
-        menuActive ? "pt-4 " : "py-4"
-      } px-10 shadow-xl fixed w-full dark:bg-gray-900 dark:text-white bg-white sm:bg-transparent sm:backdrop-blur-sm z-10 backdrop-brightness-110`}
+      className={`${menuActive ? "pt-4 " : "py-4"} ${
+        containerScrollPos > windowHeight
+          ? "border-b-4 dark:border-white border-green-900"
+          : "border-0"
+      }  px-10 shadow-xl fixed w-full dark:bg-gray-900 dark:text-white bg-white sm:bg-transparent sm:backdrop-blur-sm z-10 backdrop-brightness-110 transition-all`}
     >
       <div className="flex items-center">
         <div className="flex items-center gap-4 container mx-auto justify-between sm:justify-start">
@@ -35,8 +39,6 @@ export default function NavigationBar() {
           </span>
         </div>
         <span className="text-2xl cursor-pointer hidden sm:inline">
-          {/* <MdLightMode /> */}
-          {/* <ThemeHandler /> */}
           <ThemeButton />
         </span>
       </div>

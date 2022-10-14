@@ -8,11 +8,11 @@ export default function ThemeButton() {
     <>
       {colorTheme === "light" ? (
         <div onClick={() => setTheme("light")}>
-          <MdDarkMode />
+          <MdDarkMode className="text-3xl sm:text-4xl" />
         </div>
       ) : (
         <div onClick={() => setTheme("dark")}>
-          <MdLightMode />
+          <MdLightMode className="text-3xl sm:text-4xl" />
         </div>
       )}
     </>

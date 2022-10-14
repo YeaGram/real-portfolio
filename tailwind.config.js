@@ -21,8 +21,10 @@ module.exports = {
       },
       keyframes: {
         myBounce_in_light: {
-          "0%, 100%": { transform: "translateY(-10%)", color: "white" },
-          "3%, 97%": { transform: "translateY(0%)", color: "black" },
+          "0%, 100%": {
+            transform: "translateY(-10%) translateX(-20%) scale(120%)",
+          },
+          "3%, 97%": { transform: "translateY(0%) translateX(0%) scale(100%)" },
         },
         myBounce_in_dark: {
           "0%, 100%": { transform: "translateY(-10%)", color: "black" },

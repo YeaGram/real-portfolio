@@ -1,8 +1,9 @@
 import styles from "./hamburger.module.css";
+import { Squash as Hamburger } from "hamburger-react";
 export default function HamburgerMenu() {
   return (
     <div className={styles.hamburger_container}>
-      <span
+      {/* <span
         className={`${styles.hamburger_items} bg-black dark:bg-white transition-all duration-200`}
       ></span>
       <span
@@ -10,7 +11,8 @@ export default function HamburgerMenu() {
       ></span>
       <span
         className={`${styles.hamburger_items} bg-black dark:bg-white transition-all duration-200`}
-      ></span>
+      ></span> */}
+      <Hamburger />
     </div>
   );
 }

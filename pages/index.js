@@ -14,11 +14,6 @@ export default function Home() {
       >
         <Header />
         <Content />
-
-        {/* <div className="scrollChild bg-red-500">Up</div>
-        <div className="scrollChild bg-yellow-500">Middle</div>
-        <div className="scrollChild bg-red-500">Middle</div>
-        <div className="scrollChild bg-yellow-500">Down</div> */}
       </div>
     </>
   );

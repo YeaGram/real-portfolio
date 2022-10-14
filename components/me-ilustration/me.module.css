@@ -1,0 +1,25 @@
+.svgParent {
+  stroke-width: 0px;
+}
+.svgParent path {
+  animation-name: wipes;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  stroke-dasharray: 150;
+}
+
+@keyframes wipes {
+  0% {
+    stroke-dashoffset: 0;
+    stroke-width: 1;
+  }
+  50% {
+    stroke-dashoffset: 300;
+    stroke-width: 3;
+  }
+  100% {
+    stroke-dashoffset: 600;
+    stroke-width: 1;
+  }
+}

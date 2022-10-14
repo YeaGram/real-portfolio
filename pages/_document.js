@@ -15,7 +15,7 @@ export default class MyDocument extends Document {
           />
         </Head>
 
-        <body className="overflow-hidden">
+        <body className="overflow-hidden dark:bg-gray-800 dark:text-white">
           <Main />
           <NextScript />
         </body>
