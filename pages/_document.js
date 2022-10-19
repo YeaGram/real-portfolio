@@ -5,7 +5,6 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link rel="icon" href="/logo.webp" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,7 +14,7 @@ export default class MyDocument extends Document {
           />
         </Head>
 
-        <body className="overflow-hidden dark:bg-gray-800 dark:text-white">
+        <body className="overflow-hidden dark:bg-gray-800 dark:text-white ">
           <Main />
           <NextScript />
         </body>

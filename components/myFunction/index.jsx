@@ -6,7 +6,7 @@ export function useMousePos(elm) {
   const [posY, setPosY] = useState("");
 
   useEffect(() => {
-    const elementTarget = document.getElementById(elm);
+    const elementTarget = document.querySelector(elm);
 
     elementTarget.addEventListener("mousemove", (e) => {
       let x = elementTarget.getBoundingClientRect();

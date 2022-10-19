@@ -18,7 +18,7 @@ export default function Hero() {
           <Image
             alt="hero-image"
             layout="fill"
-            src="/background.jpg"
+            src="/asset/background.webp"
             objectFit="cover"
           />
         </div>

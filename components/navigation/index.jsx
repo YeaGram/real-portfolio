@@ -20,19 +20,19 @@ export default function NavigationBar() {
     <nav
       className={`${menuActive ? "pt-4 " : "py-4"} ${
         containerScrollPos > windowHeight
-          ? "border-b-4 dark:border-white border-green-900"
+          ? "border-b-[1px] dark:border-white/50 border-sky-900"
           : "border-0"
-      }  px-10 shadow-xl fixed w-full dark:bg-gray-900 dark:text-white bg-white sm:bg-transparent sm:backdrop-blur-sm z-10 backdrop-brightness-110 transition-all`}
+      }  px-10 shadow-xl fixed z-20 w-full dark:bg-gray-900 dark:text-white bg-white sm:bg-transparent sm:backdrop-blur-sm  backdrop-brightness-110 transition-all`}
     >
       <div className="flex items-center">
         <div className="flex items-center gap-4 container mx-auto justify-between sm:justify-start">
           <Brand />
-          <span className="w-1 h-10 bg-green-900 dark:bg-white sm:block hidden"></span>
+          <span className="w-[2px] h-10 bg-gray-700 dark:bg-white sm:block hidden"></span>
           <ul className="items-center gap-2 sm:flex hidden">
-            <NavigationBarItems>Home</NavigationBarItems>
-            <NavigationBarItems>About</NavigationBarItems>
-            <NavigationBarItems>Project</NavigationBarItems>
-            <NavigationBarItems>Contact</NavigationBarItems>
+            <NavigationBarItems url="#home">Home</NavigationBarItems>
+            <NavigationBarItems url="#about">About</NavigationBarItems>
+            <NavigationBarItems url="#">Project</NavigationBarItems>
+            <NavigationBarItems url="#">Contact</NavigationBarItems>
           </ul>
           <span className="sm:hidden block" onClick={handleMenu}>
             <HamburgerMenu />
@@ -48,19 +48,19 @@ export default function NavigationBar() {
         } flex-col border-y-2 border-slate-200 dark:border-slate-700 py-2 mt-8 sm:hidden`}
       >
         <div className="mobile ">
-          <NavigationBarItems>
+          <NavigationBarItems url="#home">
             <MdHome />
             Home
           </NavigationBarItems>
-          <NavigationBarItems>
+          <NavigationBarItems url="#about">
             <MdFace />
             About
           </NavigationBarItems>
-          <NavigationBarItems>
+          <NavigationBarItems url="#">
             <MdTask />
             Project
           </NavigationBarItems>
-          <NavigationBarItems>
+          <NavigationBarItems url="#">
             <MdContactSupport />
             Contact
           </NavigationBarItems>

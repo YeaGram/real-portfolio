@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function NavigationBarItems({ url, children }) {
   return (
-    <Link href="/">
+    <Link href={url}>
       <li
         className={`py-2 sm:px-3 text-lg font-light transition-all duration-300 hover:opacity-100 hover:underline opacity-40  hover:scale-110 hover:font-bold font-Merriweather`}
       >

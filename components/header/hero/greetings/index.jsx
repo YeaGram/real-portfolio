@@ -26,7 +26,7 @@ export default function HeroGreetings() {
 
   return (
     <div className=" px-10 sm:p-0 greetings dark:text-white">
-      <h2 className="font-semibold font-Merriweather tracking-tight text-4xl md:text-5xl lg:text-4xl text-green-900/70 dark:text-white/70 transition-all -mb-1">
+      <h2 className="font-semibold font-Merriweather tracking-tight text-4xl md:text-5xl lg:text-4xl text-sky-900/70 dark:text-sky-200/70 transition-all -mb-1">
         Hello im...
       </h2>
       <h1 className="font-[900] font-Patua_One  flex md:text-7xl lg:text-6xl xl:text-7xl  text-black dark:text-white animate-myBounce_scale mb-1">
@@ -54,7 +54,7 @@ export default function HeroGreetings() {
       </h1>
       <div className="drop-shadow-none opacity-100 mb-1 inline-flex gap-1">
         <span className="opacity-50">or</span>
-        <p className="underline opacity-80 dark:text-white text-green-900">
+        <p className="underline opacity-80 dark:text-white text-sky-900">
           {" "}
           Dimas Januardi.
         </p>
